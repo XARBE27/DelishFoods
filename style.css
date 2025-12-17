@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px;
+  background-color: #00ced1;
+}
+
+.nav-menu-links {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+}
+
+.nav-menu-links a {
+  font-size: 24px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #0b0101;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 600;
+  font-family: "Imperial Script", cursive;
+  animation: logoAnimation 2s ease forwards;
+}
+
+@keyframes logoAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  margin-bottom: 50px;
+}
+
+.hero {
+  height: 700px;
+  background-image: url("./images/food.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-content {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+}
+
+h1 {
+  font-size: 48px;
+  color: #ffffff;
+  letter-spacing: 3px;
+  font-style: italic;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: textFade 1.6s ease-out forwards;
+}
+
+.hero-text {
+  font-size: 24px;
+  color: #f8e9ff;
+  letter-spacing: 2px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  animation: textFade 2s ease forwards;
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+button {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+table {
+  width: 60%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 2px solid #00ced1;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #00ced1;
+}
+
+td {
+  background-color: lightcyan;
+  transition: all 0.5s ease-in-out;
+}
+
+td:hover {
+  background-color: rgb(135, 199, 222);
+  cursor: pointer;
+}
+
+footer {
+  background-color: #00ced1;
+  display: flex;
+  justify-content: space-between;
+  padding: 36px;
+}
+
+.about-section {
+  margin-top: 80px;
+  padding: 40px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.about-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.icons i {
+  font-size: 32px;
+  margin-right: 12px;
+  color: #00ced1;
+}
+
+.about-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.about-images img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: all 0.3s ease-out;
+}
+
+.about-images img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .hero {
+    height: 550px;
+  }
+
+  .hero-content {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  table {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 30px;
+  }
+
+  .nav-menu-links a {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .hero-text {
+    font-size: 20px;
+  }
+
+  table {
+    width: 95%;
+  }
+
+  .about-text p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-menu-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  .hero {
+    height: 450px;
+  }
+
+  .hero-content {
+    top: 150px;
+    padding: 20px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .about-images {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
